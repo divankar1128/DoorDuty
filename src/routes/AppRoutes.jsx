@@ -5,6 +5,7 @@ import Signup from "../pages/Signup";
 import CustomerSignup from "../pages/CustomerSignup";
 import ProfessionalSignup from "../pages/ProfessionalSignup";
 import ServicePage from "../pages/ServicePage";
+import HowItWorks from "../pages/HowItWorks";
 
 export default function AppRoutes() {
   return (
@@ -16,6 +17,10 @@ export default function AppRoutes() {
         <Route
   path="/services/:slug"
   element={<ServicePage />}
+/>
+<Route
+  path="/how-it-works"
+  element={<HowItWorks />}
 />
 
 <Route
