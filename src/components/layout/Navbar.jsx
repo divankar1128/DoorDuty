@@ -3,14 +3,35 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const services = [
-  "Cleaning",
-  "Plumbing",
-  "Electrician",
-  "AC Repair",
-  "Beauty",
-  "Carpenter",
+  {
+    title: "Cleaning",
+    slug: "cleaning",
+  },
+  {
+    title: "Plumbing",
+    slug: "plumbing",
+  },
+  {
+    title: "Electrician",
+    slug: "electrician",
+  },
+  {
+    title: "AC Repair",
+    slug: "ac-repair",
+  },
+  {
+    title: "Beauty",
+    slug: "beauty",
+  },
+  {
+    title: "Carpentry",
+    slug: "carpentry",
+  },
+  {
+    title: "Painting",
+    slug: "painting",
+  },
 ];
-
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [serviceOpen, setServiceOpen] = useState(false);
@@ -37,27 +58,27 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 lg:flex">
           {/* Services Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => setServiceOpen(true)}
-            onMouseLeave={() => setServiceOpen(false)}
-          >
-            <button className="flex items-center gap-1 font-medium text-slate-700 transition hover:text-blue-600">
-              Services
-              <ChevronDown size={18} />
-            </button>
+          <div className="relative">
+          <button
+  onClick={() => setServiceOpen(!serviceOpen)}
+  className="flex items-center gap-1 font-medium text-slate-700 transition hover:text-blue-600"
+>
+  Services
+  <ChevronDown size={18} />
+</button>
 
             {serviceOpen && (
               <div className="absolute left-0 mt-4 w-60 rounded-2xl border border-slate-200 bg-white p-3 shadow-xl">
-                {services.map((item) => (
-                  <a
-                    key={item}
-                    href="#"
-                    className="block rounded-xl px-4 py-3 transition hover:bg-slate-100"
-                  >
-                    {item}
-                  </a>
-                ))}
+              {services.map((service) => (
+  <Link
+    key={service.slug}
+    to={`/services/${service.slug}`}
+    onClick={() => setServiceOpen(false)}
+    className="block rounded-xl px-4 py-3 transition hover:bg-slate-100"
+  >
+    {service.title}
+  </Link>
+))}
               </div>
             )}
           </div>
@@ -93,14 +114,17 @@ export default function Navbar() {
 
         {/* Desktop Actions */}
         <div className="hidden items-center gap-4 lg:flex">
-          <button className="rounded-xl border border-slate-300 px-5 py-2.5 font-medium text-slate-700 transition hover:bg-slate-100">
-            Login
-          </button>
+  <Link
+    to="/login"
+    className="rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition hover:bg-blue-700"
+  >
+    Login
+  </Link>
 
-          <button className="rounded-xl bg-blue-600 px-6 py-2.5 font-semibold text-white shadow-md transition hover:bg-blue-700">
-            Book Now
-          </button>
-        </div>
+  <button className="rounded-xl bg-blue-600 px-6 py-2.5 font-semibold text-white shadow-md transition hover:bg-blue-700">
+    Book Now
+  </button>
+</div>
 
         {/* Mobile Menu Button */}
         <button

@@ -1,22 +1,25 @@
 import {
-    Search,
-    MapPin,
-    ArrowRight,
-    ShieldCheck,
-    Star,
-    Clock3,
-  } from "lucide-react";
+  Search,
+  MapPin,
+  ArrowRight,
+  ShieldCheck,
+  Star,
+  Clock3,
+} from "lucide-react";
+
+import { Link } from "react-router-dom";
+import services from "../../data/services";
   
-  const services = [
-    "Cleaning",
-    "Plumbing",
-    "Electrician",
-    "AC Repair",
-    "Beauty",
-    "Carpentry",
-    "Painting",
-    "More",
-  ];
+  // const services = [
+  //   "Cleaning",
+  //   "Plumbing",
+  //   "Electrician",
+  //   "AC Repair",
+  //   "Beauty",
+  //   "Carpentry",
+  //   "Painting",
+  //   "More",
+  // ];
   
   export default function Hero() {
     return (
@@ -91,16 +94,15 @@ import {
                 </h4>
   
                 <div className="flex flex-wrap gap-3 lg:max-w-3xl">
-
-                  {services.map((service) => (
-  
-                    <button
-                      key={service}
-className="rounded-2xl border bg-white px-4 py-3 text-sm font-medium shadow-sm transition hover:-translate-y-1 hover:border-blue-500 hover:text-blue-600"                    >
-                      {service}
-                    </button>
-  
-                  ))}
+                {services.map((service) => (
+  <Link
+    key={service.slug}
+    to={`/services/${service.slug}`}
+    className="rounded-2xl border bg-white px-4 py-3 text-sm font-medium shadow-sm transition hover:-translate-y-1 hover:border-blue-500 hover:text-blue-600"
+  >
+    {service.title}
+  </Link>
+))}
   
                 </div>
   
@@ -193,7 +195,7 @@ className="rounded-2xl border bg-white px-4 py-3 text-sm font-medium shadow-sm t
 
 {/* Verified */}
 
-{/* Verified */}
+
 
 
 </div>

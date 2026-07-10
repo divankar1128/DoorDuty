@@ -1,1 +1,536 @@
 @import "tailwindcss";
+
+/* Your custom CSS starts here */
+
+/* ===============================
+   HOW IT WORKS ORBIT
+================================ */
+
+.orbit {
+  animation: orbitRotate 20s linear infinite;
+  transform-origin: center;
+}
+
+.card-fix {
+  animation: counterRotate 20s linear infinite;
+}
+
+.paused {
+  animation-play-state: paused;
+}
+
+.paused .card-fix {
+  animation-play-state: paused;
+}
+
+.orbit-item {
+  position: absolute;
+}
+
+.orbit-item.top {
+  left: 50%;
+  top: -22px;
+  transform: translateX(-50%);
+}
+
+.orbit-item.left {
+  left: 20px;
+  bottom: 55px;
+}
+
+.orbit-item.right {
+  right: 20px;
+  bottom: 55px;
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes counterRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+/* ===========================
+   WHY CHOOSE US
+=========================== */
+
+.glass-card {
+    background: rgba(255,255,255,.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+  
+    border: 1px solid rgba(255,255,255,.5);
+  
+    box-shadow:
+      0 20px 50px rgba(37,99,235,.08);
+  
+    transition: .4s;
+  }
+  
+  .glass-card:hover{
+  
+    transform:
+    translateY(-12px)
+    scale(1.04);
+  
+    box-shadow:
+    0 30px 70px rgba(37,99,235,.18);
+  
+    border-color:#2563eb;
+  }
+  
+  /* Floating Animations */
+  
+  .float-1{
+   animation:floatOne 5s ease-in-out infinite;
+  }
+  
+  .float-2{
+   animation:floatTwo 6s ease-in-out infinite;
+  }
+  
+  .float-3{
+   animation:floatThree 7s ease-in-out infinite;
+  }
+  
+  @keyframes floatOne{
+  
+  0%,100%{
+  transform:translateY(0px);
+  }
+  
+  50%{
+  transform:translateY(-14px);
+  }
+  
+  }
+  
+  @keyframes floatTwo{
+  
+  0%,100%{
+  transform:translateY(0px);
+  }
+  
+  50%{
+  transform:translateY(12px);
+  }
+  
+  }
+  
+  @keyframes floatThree{
+  
+  0%,100%{
+  transform:translateY(0px);
+  }
+  
+  50%{
+  transform:translateY(-18px);
+  }
+  
+  }
+  /* ======================================================
+   WHERE WE SERVE - GLASS CAROUSEL
+====================================================== */
+
+/* Auto Sliding Track */
+.city-slider {
+    display: flex;
+    width: max-content;
+    animation: cityScroll 30s linear infinite;
+  }
+  
+  /* Pause animation when hovering the entire carousel */
+  .group:hover .city-slider {
+    animation-play-state: paused;
+  }
+  
+  /* Glass Card */
+  .city-card {
+    width: 320px;
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    transition: all 0.45s ease;
+  }
+  
+  .city-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    border-color: rgb(37 99 235);
+    box-shadow: 0 25px 60px rgba(37, 99, 235, 0.25);
+  }
+  
+  /* Image Animation */
+  .city-card img {
+    transition: transform 0.6s ease;
+  }
+  
+  .city-card:hover img {
+    transform: scale(1.08);
+  }
+  
+  /* Infinite Auto Scroll */
+  @keyframes cityScroll {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Area Chips */
+  .area-chip {
+    transition: all 0.3s ease;
+  }
+  
+  .area-chip:hover {
+    transform: translateY(-3px);
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .city-card {
+      width: 250px;
+    }
+  
+    .city-slider {
+      animation-duration: 22s;
+    }
+  }
+  /* ======================================================
+   CUSTOMER REVIEWS
+====================================================== */
+
+.review-slider {
+    display: flex;
+    width: max-content;
+    animation: reviewScroll 35s linear infinite;
+  }
+  
+  .review-slider:hover {
+    animation-play-state: paused;
+  }
+  
+  .review-card {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    transition: all 0.4s ease;
+  }
+  
+  .review-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0 30px 60px rgba(37, 99, 235, 0.18);
+    border-color: rgb(37 99 235);
+  }
+  
+  /* Infinite Auto Scroll */
+  @keyframes reviewScroll {
+    from {
+      transform: translateX(0);
+    }
+  
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  /* Mobile */
+  @media (max-width: 768px) {
+    .review-card {
+      width: 300px !important;
+    }
+  
+    .review-slider {
+      animation-duration: 22s;
+    }
+  }
+  /* ===========================================
+            PREMIUM CIRCULAR FAQ
+=========================================== */
+
+/* Smooth scroll */
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===========================
+   Floating Bubbles
+=========================== */
+
+@keyframes float {
+
+  0%{
+    transform:translateY(0px);
+  }
+
+  50%{
+    transform:translateY(-10px);
+  }
+
+  100%{
+    transform:translateY(0px);
+  }
+
+}
+
+button[class*="left-"],
+button[class*="right-"]{
+
+  animation:float 5s ease-in-out infinite;
+
+}
+
+button[class*="left-"]:nth-of-type(2){
+
+  animation-delay:.6s;
+
+}
+
+button[class*="right-"]:nth-of-type(3){
+
+  animation-delay:1.2s;
+
+}
+
+/* ===========================
+      Blue Glow
+=========================== */
+
+button:hover{
+
+  box-shadow:
+      0 20px 50px rgba(37,99,235,.25),
+      0 0 40px rgba(59,130,246,.25);
+
+}
+
+/* ===========================
+      Center Pulse
+=========================== */
+
+@keyframes pulse{
+
+0%{
+
+box-shadow:
+0 0 0 rgba(37,99,235,.2),
+0 30px 80px rgba(37,99,235,.25);
+
+}
+
+50%{
+
+box-shadow:
+0 0 45px rgba(37,99,235,.35),
+0 40px 90px rgba(37,99,235,.40);
+
+}
+
+100%{
+
+box-shadow:
+0 0 0 rgba(37,99,235,.2),
+0 30px 80px rgba(37,99,235,.25);
+
+}
+
+}
+
+.absolute.left-1\/2.top-1\/2{
+
+animation:pulse 3s ease-in-out infinite;
+
+}
+
+/* ===========================
+      Answer Card
+=========================== */
+
+.rounded-\[32px\]{
+
+transition:all .45s ease;
+
+}
+
+.rounded-\[32px\]:hover{
+
+transform:translateY(-8px);
+
+}
+
+/* ===========================
+        SVG Lines
+=========================== */
+
+svg line{
+
+stroke-dasharray:12;
+
+animation:dash 18s linear infinite;
+
+opacity:.8;
+
+}
+
+@keyframes dash{
+
+to{
+
+stroke-dashoffset:-240;
+
+}
+
+}
+
+/* ===========================
+      Glass Effect
+=========================== */
+
+button{
+
+backdrop-filter:blur(18px);
+
+-webkit-backdrop-filter:blur(18px);
+
+}
+
+/* ===========================
+      Hover Scale
+=========================== */
+
+button{
+
+transition:
+transform .35s,
+box-shadow .35s,
+background .35s;
+
+}
+
+button:hover{
+
+transform:translateY(-6px) scale(1.06);
+
+}
+
+/* ===========================
+      Icon Animation
+=========================== */
+
+button svg{
+
+transition:all .35s;
+
+}
+
+button:hover svg{
+
+transform:rotate(12deg) scale(1.15);
+
+}
+
+/* ===========================
+      Gradient Background
+=========================== */
+
+section{
+
+background-image:
+
+radial-gradient(circle at 20% 20%,rgba(59,130,246,.08),transparent 30%),
+
+
+radial-gradient(circle at 80% 30%,rgba(59,130,246,.08),transparent 30%),
+
+
+radial-gradient(circle at 50% 90%,rgba(96,165,250,.08),transparent 40%);
+
+}
+
+/* ===========================
+      Responsive
+=========================== */
+
+@media(max-width:1024px){
+
+.relative.mx-auto.mt-24.h-\[560px\].w-\[900px\]{
+
+width:100%;
+
+height:700px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.relative.mx-auto.mt-24.h-\[560px\].w-\[900px\]{
+
+display:grid;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:20px;
+
+height:auto;
+
+}
+
+.absolute.left-1\/2.top-1\/2{
+
+position:relative;
+
+left:auto;
+
+top:auto;
+
+transform:none;
+
+margin:auto;
+
+grid-column:span 2;
+
+margin-bottom:25px;
+
+}
+
+button[class*="left-"],
+button[class*="right-"]{
+
+position:relative;
+
+left:auto!important;
+
+right:auto!important;
+
+top:auto!important;
+
+bottom:auto!important;
+
+margin:auto;
+
+}
+
+svg{
+
+display:none;
+
+}
+
+}
