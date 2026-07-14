@@ -3,7 +3,7 @@ import Hero from "../../features/home/Hero";
 import PopularServices from "../../components/sections/PopularServices";
 import HowItWorks from "../../components/sections/HowItWorks";
 import BookingSteps from "../../components/sections/BookingSteps";
-import WhyChooseUs from "../../components/sections/WhyChooseus";
+import WhyChooseUs from "../../components/sections/WhyChoose";
 import Cities from "../../components/sections/Cities";
 import CustomerReviews from "../../components/sections/CustomerReviews";
 import CircularFAQ from "../../components/sections/CircularFAQ";
