@@ -3,7 +3,6 @@ import Home from "../pages/Home/Home";
 import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import CustomerSignup from "../pages/CustomerSignup";
-import ProfessionalSignup from "../pages/ProfessionalSignup";
 import ServicePage from "../pages/ServicePage";
 import HowItWorks from "../pages/HowItWorks";
 import Membership from "../pages/Membership";
