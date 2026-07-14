@@ -7,6 +7,7 @@ export default function Login() {
       title="Welcome Back 👋"
       subtitle="Login to continue booking trusted home professionals."
     >
+      <LoginForm role="customer" />
       <LoginForm />
     </AuthLayout>
   );

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
     Mail,
     Phone,
@@ -154,12 +155,47 @@ import {
 
 <div className="space-y-4">
 
-  <SimpleLink text="About Us" />
-  <SimpleLink text="Become a Professional" />
-  <SimpleLink text="Membership" />
-  <SimpleLink text="FAQs" />
-  <SimpleLink text="Privacy Policy" />
-  <SimpleLink text="Terms & Conditions" />
+  <Link
+    to="/about"
+    className="block text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
+  >
+    About Us
+  </Link>
+
+  <Link
+    to="/signup/professional"
+    className="block text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
+  >
+    Become a Professional
+  </Link>
+
+  <Link
+    to="/membership"
+    className="block text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
+  >
+    Membership
+  </Link>
+
+  <Link
+    to="/#faq"
+    className="block text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
+  >
+    FAQs
+  </Link>
+
+  <Link
+    to="/privacy-policy"
+    className="block text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
+  >
+    Privacy Policy
+  </Link>
+
+  <Link
+    to="/terms"
+    className="block text-slate-600 transition-all duration-300 hover:translate-x-1 hover:text-blue-600"
+  >
+    Terms & Conditions
+  </Link>
 
 </div>
 
@@ -247,19 +283,19 @@ to your doorstep.
 </p>
 
 <div className="mt-8 flex flex-wrap justify-center gap-5">
-
-<button className="rounded-full bg-white px-8 py-4 font-semibold text-blue-700 transition duration-300 hover:-translate-y-1 hover:shadow-2xl">
-
+<Link
+  to="/"
+  className="rounded-full bg-white px-8 py-4 font-semibold text-blue-700 transition duration-300 hover:-translate-y-1 hover:shadow-2xl"
+>
   Book Now
+</Link>
 
-</button>
-
-<button className="rounded-full border border-white/40 px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white/10">
-
+<Link
+  to="/support"
+  className="rounded-full border border-white/40 px-8 py-4 font-semibold text-white transition duration-300 hover:bg-white/10"
+>
   Contact Us
-
-</button>
-
+</Link>
 </div>
 
 </div>
@@ -277,33 +313,33 @@ to your doorstep.
 
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
 
-              <a
-                href="#"
-                className="transition hover:text-white"
-              >
-                Privacy Policy
-              </a>
+            <Link
+  to="/privacy-policy"
+  className="transition hover:text-white"
+>
+  Privacy Policy
+</Link>
 
-              <a
-                href="#"
-                className="transition hover:text-white"
-              >
-                Terms & Conditions
-              </a>
+<Link
+  to="/terms"
+  className="transition hover:text-white"
+>
+  Terms & Conditions
+</Link>
 
-              <a
-                href="#"
-                className="transition hover:text-white"
-              >
-                Refund Policy
-              </a>
+<Link
+  to="/refund-policy"
+  className="transition hover:text-white"
+>
+  Refund Policy
+</Link>
 
-              <a
-                href="#"
-                className="transition hover:text-white"
-              >
-                Cookies
-              </a>
+<Link
+  to="/cookies"
+  className="transition hover:text-white"
+>
+  Cookies
+</Link>
 
             </div>
 

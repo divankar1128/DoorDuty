@@ -163,6 +163,12 @@ export default function Navbar() {
               <button className="w-full rounded-xl border border-slate-300 py-3 font-medium">
                 Login
               </button>
+              <Link
+  to="/professional/login"
+  className="rounded-xl border border-blue-600 px-5 py-2 text-blue-600 hover:bg-blue-50"
+>
+  Pro Login
+</Link>
 
               <button className="w-full rounded-xl bg-blue-600 py-3 font-semibold text-white">
                 Book Now

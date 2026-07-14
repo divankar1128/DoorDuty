@@ -3,8 +3,8 @@ import { Eye, EyeOff, Mail, Lock, ArrowRight } from "lucide-react";
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../../context/AuthContext";
 
-export default function LoginForm() {
-  const navigate = useNavigate();
+export default function LoginForm({ role }) { 
+   const navigate = useNavigate();
   const { login } = useAuth();
 
   const [showPassword, setShowPassword] = useState(false);
@@ -46,7 +46,14 @@ export default function LoginForm() {
 
     setLoading(false);
 
-    navigate("/");
+    // Save login state
+    if (role === "professional") {
+      localStorage.setItem("professionalLoggedIn", "true");
+      navigate("/professional/dashboard");
+    } else {
+      localStorage.setItem("customerLoggedIn", "true");
+      navigate("/");
+    }
   }
 
   return (
